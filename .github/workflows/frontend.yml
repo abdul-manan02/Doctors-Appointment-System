@@ -18,9 +18,9 @@ jobs:
 
     steps:4
     
-      - name: Update local repository with remote changes
-        run: git pull origin main
-        
+      # - name: Update local repository with remote changes
+      #   run: git pull origin main
+
       - name: Checkout code
         uses: actions/checkout@v2
 
