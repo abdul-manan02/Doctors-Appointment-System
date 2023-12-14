@@ -1,7 +1,7 @@
 version: '3'
 services:
   appointments:
-    image: abdulmanan02/project_appointments:1.0
+    image: abdulmanan02/project_appointments:358cf7336357917f2ade773fa8079a76e37df931
     ports:
       - 7070:7070
     networks:
