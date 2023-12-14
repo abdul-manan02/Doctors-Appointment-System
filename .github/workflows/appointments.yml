@@ -1,0 +1,35 @@
+name: Build and Push Appointments Microservice
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - appointments/**   # Path-based filtering for changes in the appointments folder
+  pull_request:
+    branches:
+      - main
+    paths:
+      - appointments/**   # Path-based filtering for changes in the appointments folder
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and push Appointments Docker image
+        run: |
+          cd appointments
+          docker build -t abdulmanan02/project_appointments:${{ github.sha }} .
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+          docker push abdulmanan02/project_appointments:${{ github.sha }}
+
+      - name: Update docker-compose with new image tag
+        run: |
+          sed -i 's/abdulmanan02\/project_appointments:1.0/abdulmanan02\/project_appointments:${{ github.sha }}/g' docker-compose.yml
+          git add docker-compose.yml
+          git commit -m "Update appointments service image tag to ${{ github.sha }}"
+          git push origin ${{ github.ref }}
