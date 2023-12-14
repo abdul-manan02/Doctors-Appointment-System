@@ -31,6 +31,7 @@ app.get('/api/doctors', async (req, res) => {
   }
 });
 
+
 app.get('/api/appointments', async (req, res) => {
   let url  = process.env.APPOINTMENTS_SERVICE_URL;
   try {
