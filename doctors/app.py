@@ -8,7 +8,7 @@ doctors = [
 
 @app.route('/hello')
 def hello():
-  greeting = "Hello world!"
+  greeting = "KI HAAL CHAAL AY!"
   return greeting
 
 @app.route('/doctors', methods=["GET"])
