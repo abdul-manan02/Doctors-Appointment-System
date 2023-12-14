@@ -15,7 +15,7 @@ services:
       - app-network
 
   frontend:
-    image: abdulmanan02/project_frontend:1.0
+    image: abdulmanan02/project_frontend:0a62a734b0e1506ab4acaa87da8cf8f18969f073
     ports:
       - 3000:3000
     environment:
