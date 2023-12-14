@@ -32,6 +32,7 @@ jobs:
           sed -i 's/abdulmanan02\/project_frontend:1.0/abdulmanan02\/project_frontend:${{ github.sha }}/g' docker-compose.yaml
           git config user.email "abdulmananshah02@gmail.com" 
           git config user.name "abdul-manan02"
+          git pull
           git add docker-compose.yaml
           git commit -m "Update frontend service image tag to ${{ github.sha }}"
           git push https://${{ secrets.ACCESSTOKEN }}@github.com/abdul-manan02/Dev-Ops_Project.git HEAD:main
