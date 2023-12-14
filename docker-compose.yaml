@@ -8,7 +8,7 @@ services:
       - app-network
 
   doctors:
-    image: abdulmanan02/project_doctors:1.0
+    image: abdulmanan02/project_doctors:358cf7336357917f2ade773fa8079a76e37df931
     ports:
       - 9090:9090
     networks:
