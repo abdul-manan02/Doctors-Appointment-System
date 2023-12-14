@@ -11,7 +11,6 @@ def hello():
   greeting = "Hello world!"
   return greeting
 
-
 @app.route('/doctors', methods=["GET"])
 def getDoctors():
   return jsonify(doctors)
