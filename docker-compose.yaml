@@ -1,0 +1,29 @@
+version: '3'
+services:
+  appointments:
+    image: abdulmanan02/project_appointments:1.0 # Replace with your Docker Hub abdulmanan02 and image name
+    ports:
+      - 7070:7070
+    networks:
+      - app-network
+
+  doctors:
+    image: abdulmanan02/project_doctors:1.0 # Replace with your Docker Hub abdulmanan02 and image name
+    ports:
+      - 9090:9090
+    networks:
+      - app-network
+
+  frontend:
+    image: abdulmanan02/project_frontend:1.0
+    ports:
+      - 3000:3000
+    environment:
+      - DOCTORS_SERVICE_URL=doctors:9090
+      - APPOINTMENTS_SERVICE_URL=appointments:7070
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
