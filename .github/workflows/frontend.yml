@@ -29,7 +29,7 @@ jobs:
 
       - name: Update docker-compose with new image tag
         run: |
-          sed -i 's/abdulmanan02\/project_frontend:1.0/abdulmanan02\/project_frontend:${{ github.sha }}/g' docker-compose.yml
-          git add docker-compose.yml
+          sed -i 's/abdulmanan02\/project_frontend:1.0/abdulmanan02\/project_frontend:${{ github.sha }}/g' docker-compose.yaml
+          git add docker-compose.yaml
           git commit -m "Update frontend service image tag to ${{ github.sha }}"
           git push https://${{ secrets.ACCESSTOKEN }}@github.com/abdul-manan02/ACCESSTOKEN.git HEAD:main
