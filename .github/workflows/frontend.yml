@@ -33,7 +33,7 @@ jobs:
 
       - name: Changing Docker Compose
         run: |
-          sed -i "s|abdulmanan02/project_appointments:[0-9a-f]\{40\}|abdulmanan02/project_appointments:${{ github.sha }}|g; s|abdulmanan02/project_appointments:1.0|abdulmanan02/project_appointments:${{ github.sha }}|g" docker-compose.yaml
+          sed -i "s|abdulmanan02/project_frontend:[0-9a-f]\{40\}|abdulmanan02/project_frontend:${{ github.sha }}|g; s|abdulmanan02/project_frontend:1.0|abdulmanan02/project_frontend:${{ github.sha }}|g" docker-compose.yaml
 
       - name: Update docker-compose with new image tag
         run: |

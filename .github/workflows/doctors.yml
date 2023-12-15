@@ -5,19 +5,18 @@ on:
     branches:
       - main
     paths:
-      - doctors/**   # Path-based filtering for changes in the doctors folder
+      - doctors/** # Path-based filtering for changes in the doctors folder
   pull_request:
     branches:
       - main
     paths:
-      - doctors/**   # Path-based filtering for changes in the doctors folder
+      - doctors/** # Path-based filtering for changes in the doctors folder
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
 
     steps:
-
       # - name: Update local repository with remote changes
       #   run: git pull origin main
 
@@ -33,7 +32,7 @@ jobs:
 
       - name: Changing Docker Compose
         run: |
-          sed -i "s|abdulmanan02/project_appointments:[0-9a-f]\{40\}|abdulmanan02/project_appointments:${{ github.sha }}|g; s|abdulmanan02/project_appointments:1.0|abdulmanan02/project_appointments:${{ github.sha }}|g" docker-compose.yaml
+          sed -i "s|abdulmanan02/project_doctors:[0-9a-f]\{40\}|abdulmanan02/project_doctors:${{ github.sha }}|g; s|abdulmanan02/project_doctors:1.0|abdulmanan02/project_doctors:${{ github.sha }}|g" docker-compose.yaml
 
       - name: Update docker-compose with new image tag
         run: |
