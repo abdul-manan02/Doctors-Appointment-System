@@ -1,21 +1,21 @@
 version: '3'
 services:
   appointments:
-    image: abdulmanan02/project_appointments:1.0
+    image: abdulmanan02/project_appointments:0a62a734b0e1506ab4acaa87da8cf8f18969f073
     ports:
       - 7070:7070
     networks:
       - app-network
 
   doctors:
-    image: abdulmanan02/project_doctors:1.0
+    image: abdulmanan02/project_doctors:0a62a734b0e1506ab4acaa87da8cf8f18969f073
     ports:
       - 9090:9090
     networks:
       - app-network
 
   frontend:
-    image: abdulmanan02/project_frontend:1.0
+    image: abdulmanan02/project_frontend:0a62a734b0e1506ab4acaa87da8cf8f18969f073
     ports:
       - 3000:3000
     environment:
