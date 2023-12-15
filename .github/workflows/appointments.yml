@@ -42,5 +42,5 @@ jobs:
           git add docker-compose.yaml
           git commit -m "Update appointments service image tag to ${{ github.sha }}"
           git config pull.rebase true
-          git pull origin main
+          git pull
           git push https://${{ secrets.ACCESSTOKEN }}@github.com/abdul-manan02/Dev-Ops_Project.git HEAD:main
