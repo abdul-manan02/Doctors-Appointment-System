@@ -24,6 +24,13 @@ services:
     networks:
       - app-network
 
+  db:
+    image: abdulmanan02/project_db:1.0
+    ports:
+      - 3306:3306
+    networks:
+      - app-network
+
 networks:
   app-network:
     driver: bridge
